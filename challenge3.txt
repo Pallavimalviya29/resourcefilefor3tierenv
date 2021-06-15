@@ -1,0 +1,16 @@
+def nestedGet(d,p):
+    if len(p) > 1:
+        try:
+            return nestedGet(d[p[0]],p[1:])
+        except AttributeError:
+            return None
+    if len(p) == 1:
+        try:
+            return d[p[0]]
+        except AttributeError:
+            return None
+
+
+object = {'a':{'b':{'c':'d'}}}
+key = 'a/b/c'
+print(nestedGet(object,key.split('/')))
