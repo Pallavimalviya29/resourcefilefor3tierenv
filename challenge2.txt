@@ -3,7 +3,7 @@ import json
 client = boto3.client('ec2')
 response = response = client.describe_instances(
 	InstanceIds=[
-        'string',
+        'string'
     ]
 )
 y = json.dumps(response)
